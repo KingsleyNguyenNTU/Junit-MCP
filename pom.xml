@@ -63,7 +63,6 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- JUnit 4 Vintage Engine -->
@@ -71,7 +70,6 @@
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
             <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Jackson for JSON -->

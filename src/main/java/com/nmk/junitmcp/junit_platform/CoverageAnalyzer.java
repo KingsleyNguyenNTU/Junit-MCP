@@ -13,9 +13,11 @@ import java.util.Map;
 
 public class CoverageAnalyzer {
     private final ExecFileLoader loader;
+    private final String classesDirectory;
 
-    public CoverageAnalyzer(ExecFileLoader loader) {
+    public CoverageAnalyzer(ExecFileLoader loader, String classesDirectory) {
         this.loader = loader;
+        this.classesDirectory = classesDirectory;
     }
 
     public Map<String, CoverageResult> analyze() throws IOException {
@@ -25,7 +27,7 @@ public class CoverageAnalyzer {
         Analyzer analyzer = new Analyzer(loader.getExecutionDataStore(), coverageBuilder);
 
         // analyze compiled classes
-        File classesDir = new File("target/classes");
+        File classesDir = new File(classesDirectory);
         analyzer.analyzeAll(classesDir);
 
         for (IClassCoverage cc : coverageBuilder.getClasses()) {
